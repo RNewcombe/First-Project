@@ -11,8 +11,8 @@ class Employee:
 
         Employee.num_of_emps += 1
 
-    def fullname(self):
-        return '{} {}'.format(self.first, self.last)
+    # def fullname(self):
+    #     return '{} {}'.format(self.first, self.last)
 
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amt)
@@ -21,35 +21,27 @@ class Employee:
     def set_raise_amt(cls, amount):
         cls.raise_amt = amount
 
-    @classmethod
-    def from_string(cls, emp_str):
-        first, last, pay = emp_str.split('-')
-        return cls(first, last, pay)
+    # @classmethod
+    # def from_string(cls, emp_str):
+    #     first, last, pay = emp_str.split('-')
+    #     return cls(first, last, pay)
 
 
-class Developer(Employee):
-    raise_amt = 1.10
+# class Developer(Employee):
+#     raise_amt = 1.10
 
-dev_1 = Employee('Corey', 'Schafer', 50000)
-dev_2 = Employee('Test', 'Employee', 60000)
-
-print(dev_1.pay)
-dev_1,apply_raise()
-print(dev_1.pay)
+# dev_1 = Employee('Corey', 'Schafer', 50000)
+# dev_2 = Employee('Test', 'Employee', 60000)
 
 
+emp_1 = Employee('Corey', 'Schafer', 50000)
+emp_2 = Employee('Test', 'Employee', 60000)
 
+Employee.set_raise_amt(1.05)
 
-
-
-# #emp_1 = Employee('Corey', 'Schafer', 50000)
-# emp_2 = Employee('Test', 'Employee', 60000)
-
-# Employee.set_raise_amt(1.05)
-
-# print(Employee.raise_amt)
-# print(emp_1.raise_amt)
-# print(emp_2.raise_amt)
+print(Employee.raise_amt)
+print(emp_1.raise_amt)
+print(emp_2.raise_amt)
 
 # emp_str_1 = 'John-Doe-70000'
 # emp_str_2 = 'Steve-Smith-30000'
@@ -57,7 +49,7 @@ print(dev_1.pay)
 
 # first, last, pay = emp_str_1.split('-') 
 
-# #new_emp_1 = Employee(first, last, pay)
+# new_emp_1 = Employee(first, last, pay)
 # new_emp_1 = Employee.from_string(emp_str_1)
 
 # print(new_emp_1.email)
